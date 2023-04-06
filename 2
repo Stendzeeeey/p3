@@ -1,0 +1,18 @@
+проверить платежную систему по вводимому номеру банковской карты
+card_number = input("Введите номер банковской карты: ")
+
+# Проверка длины номера карты
+if len(card_number) not in [16, 18, 19]:
+    print("Некорректный номер банковской карты")
+else:
+    # Определение платежной системы по номеру карты
+    if card_number.startswith("4"):
+        print("Платёжная система VISA")
+    elif card_number.startswith("5"):
+        print("Платёжная система MasterCard")
+    elif card_number.startswith("6"):
+        print("Платежная система Maestro")
+    elif card_number.startswith("2"):
+        print("Платежная система Mir")
+    else:
+        print("Не удалось определить платежную систему по номеру карты")
