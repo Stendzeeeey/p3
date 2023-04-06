@@ -1,0 +1,12 @@
+дан текст, вывести его построчно по 40 символов в строке без переносов
+with open("input.txt", "r", encoding='utf-8') as file_in:
+    with open("output.txt", "w", encoding='utf-8') as file_out:
+        # Считываем весь текст из файла
+        text = file_in.read()
+
+        # Разбиваем текст на строки длиной 40 символов и записываем в новый список
+        lines = [text[i:i+40] for i in range(0, len(text), 40)]
+
+        # Записываем строки в новый файл
+        for line in lines:
+            file_out.write(line + "\n")
